@@ -137,9 +137,18 @@ h1, h2, h3 { font-family: var(--font-display); }
 .student-logout { padding: 9px 14px; border: 1px solid var(--line); border-radius: 9px; background: transparent; color: var(--blue); font-weight: 700; cursor: pointer; }
 .student-main { min-height: calc(100vh - 125px); background: var(--soft); }
 .student-section { padding-top: 72px; }
+.module-tabs { display: flex; align-items: center; gap: 8px; margin-bottom: 34px; padding: 6px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); box-shadow: 0 8px 24px rgba(23,51,82,.04); }
+.module-tab { min-height: 46px; flex: 1; padding: 0 18px; border: 0; border-radius: 9px; background: transparent; color: var(--muted); font: 700 13px var(--font-display); cursor: pointer; transition: background .2s, color .2s, box-shadow .2s; }
+.module-tab span { color: inherit; font-size: 11px; }
+.module-tab[aria-selected="true"] { background: var(--ink); color: white; box-shadow: 0 8px 18px rgba(23,51,82,.12); }
+.module-panel[hidden] { display: none; }
 .student-intro { max-width: 700px; margin-bottom: 34px; }
 .student-intro h1 { margin: 15px 0 10px; font-size: clamp(36px, 5vw, 52px); letter-spacing: -2.5px; }
 .student-intro > p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+.reading-placeholder { display: flex; min-height: 240px; align-items: center; gap: 24px; padding: 35px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(145deg, #fff, #eff6fc); box-shadow: 0 12px 32px rgba(23,51,82,.06); }
+.reading-placeholder-icon { display: grid; width: 88px; height: 88px; flex: 0 0 auto; place-items: center; border-radius: 22px; background: #fff0df; color: var(--orange-deep); font: 800 26px var(--font-display); transform: rotate(-3deg); }
+.reading-placeholder h2 { margin: 6px 0 8px; font-size: 20px; letter-spacing: -.5px; }
+.reading-placeholder p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
 .lesson-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
 .lesson-card { overflow: hidden; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); box-shadow: 0 12px 32px rgba(23,51,82,.06); }
 .lesson-video { overflow: hidden; aspect-ratio: 16 / 9; background: #102238; }
@@ -203,7 +212,7 @@ h1, h2, h3 { font-family: var(--font-display); }
   .journey-wrap { grid-template-columns: 1fr; gap: 28px; }.journey-heading h2 { margin-bottom: 13px; }.journey-card { padding: 22px 18px 17px; }.journey-step { grid-template-columns: 28px 1fr 20px; gap: 9px; }.journey-next { align-items: flex-start; flex-direction: column; }
   .faq-grid { grid-template-columns: 1fr; gap: 25px; }.faq-grid h2 { font-size: 38px; }.faq-side-note { max-width: 400px; margin-block: 11px; }.faq-list summary { min-height: 62px; font-size: 12px; }
   .contact-section { padding-top: 0; padding-bottom: 65px; }.contact-panel { grid-template-columns: 1fr; gap: 23px; padding: 33px 21px; }.contact-copy h2 { font-size: 37px; }.contact-copy > p { max-width: 450px; }.contact-promise { margin-top: 16px; }.contact-form { padding: 18px; }.contact-spark-one { top: 28px; right: 20px; }
-  .student-session { gap: 10px; }.student-greeting { max-width: 130px; overflow: hidden; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }.student-logout { padding: 8px 10px; font-size: 9px; }.student-section { padding-top: 46px; }.student-intro { margin-bottom: 24px; }.student-intro > p { font-size: 12px; }.lesson-grid { grid-template-columns: 1fr; gap: 15px; }.lesson-card-body { padding: 16px 17px 18px; }
+  .student-session { gap: 10px; }.student-greeting { max-width: 130px; overflow: hidden; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }.student-logout { padding: 8px 10px; font-size: 9px; }.student-section { padding-top: 46px; }.module-tabs { margin-bottom: 24px; }.module-tab { min-height: 44px; padding-inline: 8px; font-size: 11px; }.module-tab span { display: block; margin-top: 2px; font-size: 9px; }.student-intro { margin-bottom: 24px; }.student-intro > p { font-size: 12px; }.reading-placeholder { min-height: 210px; align-items: flex-start; flex-direction: column; gap: 18px; padding: 25px 20px; }.reading-placeholder-icon { width: 72px; height: 72px; }.lesson-grid { grid-template-columns: 1fr; gap: 15px; }.lesson-card-body { padding: 16px 17px 18px; }
   .footer-main { align-items: flex-start; flex-wrap: wrap; gap: 14px; }.footer-main > p { order: 3; width: 100%; }.footer-links { flex-wrap: wrap; gap: 13px; font-size: 9px; }.footer-bottom { gap: 14px; font-size: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {

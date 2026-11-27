@@ -33,6 +33,55 @@
     <main class="student-main">
       <section class="section student-section">
         <div class="container">
+          <div class="module-tabs" role="tablist" aria-label="O‘quv bo‘limlari">
+            <button
+              class="module-tab"
+              id="reading-tab"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="reading-panel"
+              data-module="reading"
+            >
+              Reading <span>(CEFR)</span>
+            </button>
+            <button
+              class="module-tab"
+              id="speaking-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="speaking-panel"
+              data-module="speaking"
+            >
+              Exam Speaking Mocks
+            </button>
+          </div>
+
+          <div class="module-panel" id="reading-panel" role="tabpanel" aria-labelledby="reading-tab">
+            <div class="student-intro">
+              <div class="eyebrow"><span class="eyebrow-dot"></span> CEFR O‘QUV MODULI</div>
+              <h1>Reading (CEFR)</h1>
+              <p>Darajangizga mos reading matnlari, topshiriqlar va testlar bu bo‘limda joylanadi.</p>
+            </div>
+
+            <div class="lesson-grid">
+              <article class="lesson-card">
+                <div class="lesson-video">
+                  <video controls preload="metadata" playsinline>
+                    <source src="assets/videos/reading-completion-technique.mp4" type="video/mp4" />
+                    Brauzeringiz videoni o‘ynata olmaydi.
+                  </video>
+                </div>
+                <div class="lesson-card-body">
+                  <span class="lesson-number">LESSON 01</span>
+                  <h2>Reading Completion: bajarish texnikasi</h2>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="module-panel" id="speaking-panel" role="tabpanel" aria-labelledby="speaking-tab" hidden>
           <div class="student-intro">
             <div class="eyebrow"><span class="eyebrow-dot"></span> O‘QUV MODULI</div>
             <h1>Exam Speaking Mocks</h1>
@@ -91,6 +140,7 @@
           </div>
 
           <p class="student-demo-note">Kirish hozircha sinov rejimida. SMS orqali tasdiqlash keyinroq ulanadi.</p>
+          </div>
         </div>
       </section>
     </main>

@@ -23,3 +23,32 @@ logoutButton.addEventListener("click", () => {
     console.error("Kirish seansidan chiqib bo‘lmadi:", error);
   }
 });
+
+const moduleTabs = document.querySelectorAll(".module-tab");
+const modulePanels = document.querySelectorAll(".module-panel");
+
+moduleTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const selectedModule = tab.dataset.module;
+
+    moduleTabs.forEach((item) => {
+      item.setAttribute("aria-selected", String(item === tab));
+    });
+
+    modulePanels.forEach((panel) => {
+      panel.hidden = panel.id !== `${selectedModule}-panel`;
+    });
+  });
+
+  tab.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+    event.preventDefault();
+
+    const tabs = Array.from(moduleTabs);
+    const currentIndex = tabs.indexOf(tab);
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const nextTab = tabs[(currentIndex + direction + tabs.length) % tabs.length];
+    nextTab.focus();
+    nextTab.click();
+  });
+});
